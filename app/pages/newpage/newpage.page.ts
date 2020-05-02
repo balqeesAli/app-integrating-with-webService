@@ -10,6 +10,7 @@ import { AlertController } from '@ionic/angular';
 
 export class NewpagePage implements OnInit {
   public Data: any;
+  public data123;
   public tempArr: any[] = [
     // {
     //   "pid": "15",
