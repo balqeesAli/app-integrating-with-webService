@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>CURD Operation </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+<ion-item lines="none">
+  <ion-input placeholder="    Enter Product Name" [(ngModel)]="Pname"></ion-input>
+</ion-item>
+<ion-item lines="none">
+  <ion-input placeholder="    Enter Product Description" [(ngModel)]="Dscrp" ></ion-input>
+</ion-item>
+
+<ion-button class="ion-padding" (click)="SendData()" expand="block" shape="round">
+  Send Data
+</ion-button>
+
+<ion-button class="ion-padding"  (click)="viewData()" expand="block" shape="round">
+  View Data
+</ion-button>
+<br><br>
+<ion-list>
+  <ion-item *ngFor="let i of tempArr">
+    <ion-icon name="create" slot="end" (click)=" presentAlertPrompt(i.pid , i.pname , i.pDesc )"></ion-icon>
+    <ion-icon name="trash" slot="end" (click)="DeleteData(i.pid)"></ion-icon>
+    <ion-label>
+      <h3>{{i.pid}} ) {{i.pname}}</h3>
+      <p>{{i.pDesc}}</p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>
